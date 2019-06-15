@@ -3,10 +3,10 @@ package lexer
 import "cheeky-monkey/token"
 
 type Lexer struct {
-	input string
-	position int  // current position in input (points to current char)
+	input        string
+	position     int  // current position in input (points to current char)
 	readPosition int  // current reading position in input (after current char)
-	ch byte  // current char under examination
+	ch           byte // current char under examination
 }
 
 func New(input string) *Lexer {
@@ -19,12 +19,24 @@ func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 
 	l.skipWhitespace()
-	
+
 	switch l.ch {
 	case '=':
-		 tok = newToken(token.ASSIGN, l.ch)
+		tok = newToken(token.ASSIGN, l.ch)
 	case '+':
 		tok = newToken(token.PLUS, l.ch)
+	case '-':
+		tok = newToken(token.MINUS, l.ch)
+	case '!':
+		tok = newToken(token.BANG, l.ch)
+	case '/':
+		tok = newToken(token.SLASH, l.ch)
+	case '*':
+		tok = newToken(token.ASTERISK, l.ch)
+	case '<':
+		tok = newToken(token.LT, l.ch)
+	case '>':
+		tok = newToken(token.GT, l.ch)
 	case '(':
 		tok = newToken(token.LPAREN, l.ch)
 	case ')':
@@ -65,7 +77,7 @@ func newToken(tokenType token.TokenType, ch byte) token.Token {
 func (l *Lexer) readChar() {
 	if l.readPosition >= len(l.input) {
 		l.ch = 0
-	} else { 
+	} else {
 		l.ch = l.input[l.readPosition]
 	}
 	l.position = l.readPosition
@@ -83,7 +95,7 @@ func (l *Lexer) readIdentifier() string {
 func (l *Lexer) readNumber() string {
 	position := l.position
 	for isDigit(l.ch) {
-	 	l.readChar()
+		l.readChar()
 	}
 	return l.input[position:l.position]
 }
