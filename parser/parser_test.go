@@ -1,8 +1,8 @@
 package parser
 
 import (
-	"cheeky-monkey/ast"
-	"cheeky-monkey/lexer"
+	"monkey/ast"
+	"monkey/lexer"
 	"testing"
 )
 

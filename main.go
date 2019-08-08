@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/user"
-	"cheeky-monkey/repl"
+	"monkey/repl"
 )
 
 func main() {

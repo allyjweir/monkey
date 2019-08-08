@@ -1,7 +1,7 @@
 package ast
 
 import (
-	"cheeky-monkey/token"
+	"monkey/token"
 	"testing"
 )
 

@@ -1,9 +1,9 @@
 package parser
 
 import (
-	"cheeky-monkey/ast"
-	"cheeky-monkey/lexer"
-	"cheeky-monkey/token"
+	"monkey/ast"
+	"monkey/lexer"
+	"monkey/token"
 	"fmt"
 	"strconv"
 )

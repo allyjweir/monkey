@@ -1,4 +1,4 @@
-# cheeky-monkey
+# monkey
 
 Implementation of Monkey programming language, following ["Writing an Interpreter in Go" by Thorsten Ball](https://interpreterbook.com)
 

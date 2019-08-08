@@ -2,7 +2,7 @@ package ast
 
 import (
 	"bytes"
-	"cheeky-monkey/token"
+	"monkey/token"
 )
 
 type Node interface {
